@@ -82,11 +82,11 @@ return packer.startup(function(use)
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
   -- treesitter configuration
+  --
+  use("p00f/nvim-ts-rainbow")
   use({
     "nvim-treesitter/nvim-treesitter",
-    run = function()
-      require("nvim-treesitter.install").update({ with_sync = true })
-    end,
+    run = ":TSUpdate",
   })
 
   -- auto closing
@@ -108,7 +108,7 @@ return packer.startup(function(use)
   -- 半透明
   use("xiyaowong/nvim-transparent")
 
-  use("ful1e5/onedark.nvim")
+  use("folke/tokyonight.nvim")
 
   if packer_bootstrap then
     require("packer").sync()
