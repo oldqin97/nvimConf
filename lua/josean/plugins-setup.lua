@@ -61,6 +61,11 @@ return packer.startup(function(use)
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
 
+  use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+  use("octaltree/cmp-look")
+  use("hrsh7th/cmp-emoji")
+  use("hrsh7th/cmp-calc")
+
   -- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
@@ -116,6 +121,27 @@ return packer.startup(function(use)
 
   -- picgo
   use("askfiy/nvim-picgo")
+
+  -- 显示颜色
+  use("norcalli/nvim-colorizer.lua") -- nvim-tree
+
+  -- 移动文本
+  use("booperlv/nvim-gomove")
+
+  -- editconfig
+  use("editorconfig/editorconfig-vim")
+
+  -- 自动恢复光标位置
+  use("ethanholz/nvim-lastplace")
+
+  -- use 显示光标下相同词汇
+  -- use("RRethy/vim-illuminate")
+
+  -- match tag
+  use("leafOfTree/vim-matchtag")
+
+  -- 记录历史变更
+  use("mbbill/undotree")
 
   if packer_bootstrap then
     require("packer").sync()

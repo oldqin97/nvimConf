@@ -42,12 +42,29 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Replace,
     }),
   }),
+
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+
   -- sources for autocompletion
   sources = cmp.config.sources({
     { name = "nvim_lsp" }, -- lsp
     { name = "luasnip" }, -- snippets
     { name = "buffer" }, -- text within current buffer
     { name = "path" }, -- file system paths
+    { name = "calc" },
+    {
+      name = "look",
+      keyword_length = 2,
+      priority = 6,
+      option = {
+        convert_case = true,
+        loud = true,
+      },
+    },
+    { name = "emoji" },
   }),
   -- configure lspkind for vs-code like icons
   formatting = {
@@ -56,4 +73,22 @@ cmp.setup({
       ellipsis_char = "...",
     }),
   },
+})
+
+-- Use buffer source for `/`.
+cmp.setup.cmdline("/", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = "buffer" },
+  },
+})
+
+-- Use cmdline & path source for ':'.
+cmp.setup.cmdline(":", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = "path" },
+  }, {
+    { name = "cmdline" },
+  }),
 })

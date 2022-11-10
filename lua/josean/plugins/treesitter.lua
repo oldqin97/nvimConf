@@ -45,6 +45,41 @@ treesitter.setup({
     }, -- table of hex strings
     -- termcolors = { } -- table of colour name strings
   },
+
+  -- autoclose
+  autotag = {
+    enable = true,
+    filetypes = {
+      "html",
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      "rescript",
+      "xml",
+      "php",
+      "glimmer",
+      "handlebars",
+      "hbs",
+      "markdown",
+    },
+    skip_tags = {
+      "area",
+      "base",
+      "col",
+      "command",
+      "embed",
+      "keygen",
+      "param",
+      "track",
+      "wbr",
+      "menuitem",
+    },
+  },
 })
 -- 开启 Folding 模块
 vim.opt.foldmethod = "expr"

@@ -1,2 +1,3 @@
-qweqweqwe
-qweqweqweqw
+[].map();
+
+const qwe = 'map';

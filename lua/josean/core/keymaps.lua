@@ -1,92 +1,102 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
-local keymap = vim.keymap -- for conciseness
+local opt = {
+  noremap = true,
+  silent = true,
+}
+-- local keymap = vim.keymap -- for conciseness
 
+local keymap = vim.api.nvim_set_keymap
 ---------------------
 -- General Keymapske
 ---------------------
 
 -- use jk to exit insert mode
-keymap.set("i", "jj", "<ESC>")
+keymap("i", "jj", "<ESC>", opt)
 
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+keymap("n", "<leader>nh", ":nohl<CR>", opt)
 
 -- delete single character without copying into register
-keymap.set("n", "x", '"_x')
-
--- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>") -- increment
-keymap.set("n", "<leader>-", "<C-x>") -- decrement
+keymap("n", "x", '"_x', opt)
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+keymap("n", "<leader>sv", "<C-w>v", opt) -- split window vertically
+keymap("n", "<leader>sh", "<C-w>s", opt) -- split window horizontally
+keymap("n", "<leader>se", "<C-w>=", opt) -- make split windows equal width & height
+keymap("n", "<leader>sx", ":close<CR>", opt) -- close current split window
 
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+-- keymap("n", "<leader>to", ":tabnew<CR>",opt) -- open new tab
+-- keymap("n", "<leader>tx", ":tabclose<CR>",opt) -- close current tab
+-- keymap("n", "<leader>tn", ":tabn<CR>",opt) --  go to next tab
+-- keymap("n", "<leader>tp", ":tabp<CR>",opt) --  go to previous tab
 
 -- visual模式下缩进代码
-keymap.set("v", "<", "<gv")
-keymap.set("v", ">", ">gv")
+keymap("v", "<", "<gv", opt)
+keymap("v", ">", ">gv", opt)
 -- 上下移动选中文本
-keymap.set("v", "J", ":move '>+1<CR>gv-gv")
-keymap.set("v", "K", ":move '<-2<CR>gv-gv")
+keymap("v", "J", ":move '>+1<CR>gv-gv", opt)
+keymap("v", "K", ":move '<-2<CR>gv-gv", opt)
+keymap("n", "<S-j>", "<Plug>GoNSMDown", opt)
+keymap("n", "<S-k>", "<Plug>GoNSMUp", opt)
 
 -- $跳到行尾不带空格 (交换$ 和 g_)
-keymap.set("v", "H", "^")
-keymap.set("v", "L", "$")
-keymap.set("n", "H", "^")
-keymap.set("n", "L", "$")
+keymap("v", "H", "^", opt)
+keymap("v", "L", "$", opt)
+keymap("n", "H", "^", opt)
+keymap("n", "L", "$", opt)
 
 -- bufferline
 -- 左右Tab切换
-keymap.set("n", "<A-h>", ":BufferLineCyclePrev<CR>")
-keymap.set("n", "<A-l>", ":BufferLineCycleNext<CR>")
+keymap("n", "<A-h>", ":BufferLineCyclePrev<CR>", opt)
+keymap("n", "<A-l>", ":BufferLineCycleNext<CR>", opt)
 -- 关闭
 --"moll/vim-bbye"
-keymap.set("n", "<A-q>", ":Bdelete!<CR>")
+keymap("n", "<A-q>", ":Bdelete!<CR>", opt)
 
 -- 格式化
-keymap.set("n", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-keymap.set("v", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-keymap.set("i", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+keymap("n", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+keymap("v", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+keymap("i", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 
 -- 预览markdown
-keymap.set("n", "<C-A-p>", "<cmd>MarkdownPreview github<CR>")
+keymap("n", "<leader>p", "<cmd>MarkdownPreview github<CR>", opt)
 
 -- picgo
-keymap.set("n", "<leader>u", "<cmd>lua require'nvim-picgo'.upload_clipboard()<cr>")
-keymap.set("n", "<leader>e", "<cmd>lua require'nvim-picgo'.upload_imagefile()<cr>")
+keymap("n", "<leader>u", "<cmd>lua require'nvim-picgo'.upload_clipboard()<cr>", opt)
+keymap("n", "<leader>e", "<cmd>lua require'nvim-picgo'.upload_imagefile()<cr>", opt)
 
 -- comment
-keymap.set("n", "<A-/>", "gcc<Esc>")
-keymap.set("v", "<A-/>", "gcc<Esc>")
+keymap("n", "<A-/>", "gcc<Esc>", { noremap = false })
+keymap("v", "<A-/>", "gcc<Esc>", { noremap = false })
+
+-- 退出
+keymap("n", "qq", ":q<CR>", opt)
+
+-- 取消 s 默认功能
+keymap("n", "s", "", opt)
 
 ----------------------
 -- Plugin Keybinds
 ----------------------
 
 -- nvim-tree
-keymap.set("n", "<A-w>", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap("n", "<A-w>", ":NvimTreeToggle<CR>", opt) -- toggle file explorer
 
 -- telescope
-keymap.set("n", "<A-p>", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+keymap("n", "<A-p>", "<cmd>Telescope find_files<cr>", opt) -- find files within current working directory, respects .gitignore
+keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", opt) -- find string in current working directory as you type
+
+-- keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>",opt) -- find string under cursor in current working directory
+-- keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>",opt) -- list open buffers in current neovim instance
+-- keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>",opt) -- list available help tags
 
 -- telescope git commands (not on youtube nvim video)
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opt) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+keymap("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>", opt) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+keymap("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", opt) -- list git branches (use <cr> to checkout) ["gb" for git branch]
+keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", opt) -- list current changes per file with diff preview ["gs" for git status]
 
 -- restart lsp server (not on youtube nvim video)
-keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+-- keymap("n", "<leader>rs", ":LspRestart<CR>",opt) -- mapping to restart lsp if necessary
