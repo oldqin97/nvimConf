@@ -5,14 +5,9 @@ local myAutoGroup = vim.api.nvim_create_augroup("myAutoGroup", {
 local autocmd = vim.api.nvim_create_autocmd
 
 -- match-tag
-vim.cmd([[
-
-
-let g:vim_matchtag_enable_by_default = 1
-let g:vim_matchtag_files = '*.html,*.xml,*.js,*.jsx,*.vue,*.svelte,*.jsp'
-let g:vim_matchtag_highlight_cursor_on = 1	
-
-]])
+-- vim.cmd([[
+-- let g:vsnip_snippet_dir = "~/.config/nvim/snippet/"
+-- ]])
 
 -- Highlight on yank
 autocmd("TextYankPost", {

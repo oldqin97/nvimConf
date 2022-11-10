@@ -31,10 +31,7 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
-
-  use("szw/vim-maximizer") -- maximizes and restores current window
 
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
@@ -61,16 +58,15 @@ return packer.startup(function(use)
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
-
   use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
   use("octaltree/cmp-look")
   use("hrsh7th/cmp-emoji")
   use("hrsh7th/cmp-calc")
+  use("hrsh7th/cmp-vsnip")
 
   -- snippets
-  use("L3MON4D3/LuaSnip") -- snippet engine
-  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-  use("rafamadriz/friendly-snippets") -- useful snippets
+  use("hrsh7th/vim-vsnip")
+  use("rafamadriz/friendly-snippets")
 
   -- managing & installing lsp servers, linters & formatters
   use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
@@ -143,6 +139,9 @@ return packer.startup(function(use)
 
   -- 记录历史变更
   use("mbbill/undotree")
+
+  -- indent-blankline
+  use("lukas-reineke/indent-blankline.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

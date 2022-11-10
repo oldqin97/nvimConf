@@ -25,3 +25,5 @@ require("josean.plugins.gomoveConf")
 require("josean.plugins.lastplaceConf")
 require("josean.plugins.undotreeConf")
 require("josean.plugins.illuminateConf")
+require("josean.plugins.indentConf")
+

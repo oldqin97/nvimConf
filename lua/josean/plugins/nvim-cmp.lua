@@ -4,28 +4,74 @@ if not cmp_status then
   return
 end
 
--- import luasnip plugin safely
-local luasnip_status, luasnip = pcall(require, "luasnip")
-if not luasnip_status then
-  return
-end
-
 -- import lspkind plugin safely
 local lspkind_status, lspkind = pcall(require, "lspkind")
 if not lspkind_status then
   return
 end
 
--- load vs-code like snippets from plugins (e.g. friendly-snippets)
-require("luasnip/loaders/from_vscode").lazy_load()
+lspkind.init({
+  mode = "symbol_text",
+  preset = "codicons",
+  symbol_map = {
+    Text = "",
+    Method = "",
+    Function = "",
+    Constructor = "",
+    Field = "ﰠ",
+    Variable = "",
+    Class = "ﴯ",
+    Interface = "",
+    Module = "",
+    Property = "ﰠ",
+    Unit = "塞",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "",
+    Struct = "פּ",
+    Event = "",
+    Operator = "",
+    TypeParameter = "",
+  },
+})
 
-vim.opt.completeopt = "menu,menuone,noselect"
 cmp.setup({
+  -- 指定 snippet 引擎
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      -- For `vsnip` users.
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
+  -- 来源
+  -- sources for autocompletion
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" }, -- lsp
+    { name = "vsnip" },
+    { name = "buffer" }, -- text within current buffer
+    { name = "path" }, -- file system paths
+    { name = "calc" },
+    { name = "nvim_lsp_signature_help" },
+    {
+      name = "look",
+      keyword_length = 2,
+      priority = 6,
+      option = {
+        convert_case = true,
+        loud = true,
+      },
+    },
+    { name = "emoji" },
+  }),
+
+  -- 快捷键
   mapping = cmp.mapping.preset.insert({
     -- ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
     -- ["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
@@ -47,30 +93,17 @@ cmp.setup({
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
-
-  -- sources for autocompletion
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" }, -- lsp
-    { name = "luasnip" }, -- snippets
-    { name = "buffer" }, -- text within current buffer
-    { name = "path" }, -- file system paths
-    { name = "calc" },
-    {
-      name = "look",
-      keyword_length = 2,
-      priority = 6,
-      option = {
-        convert_case = true,
-        loud = true,
-      },
-    },
-    { name = "emoji" },
-  }),
-  -- configure lspkind for vs-code like icons
+  -- 使用lspkind-nvim显示类型图标
   formatting = {
     format = lspkind.cmp_format({
+      mode = "symbol_text",
       maxwidth = 50,
-      ellipsis_char = "...",
+      -- ellipsis_char = "...",
+      before = function(entry, vim_item)
+        -- Source 显示提示来源
+        vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
+        return vim_item
+      end,
     }),
   },
 })
@@ -78,9 +111,11 @@ cmp.setup({
 -- Use buffer source for `/`.
 cmp.setup.cmdline("/", {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = {
+  sources = cmp.config.sources({
+    { name = "nvim_lsp_document_symbol" },
+  }, {
     { name = "buffer" },
-  },
+  }),
 })
 
 -- Use cmdline & path source for ':'.

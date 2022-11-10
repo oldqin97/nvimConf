@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  LuaSnip = {
-    loaded = true,
-    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
   ReplaceWithRegister = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/ReplaceWithRegister",
@@ -134,10 +129,10 @@ _G.packer_plugins = {
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  cmp_luasnip = {
+  ["cmp-vsnip"] = {
     loaded = true,
-    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["dashboard-nvim"] = {
     loaded = true,
@@ -163,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -321,11 +321,6 @@ _G.packer_plugins = {
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-matchtag",
     url = "https://github.com/leafOfTree/vim-matchtag"
   },
-  ["vim-maximizer"] = {
-    loaded = true,
-    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-maximizer",
-    url = "https://github.com/szw/vim-maximizer"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-surround",
@@ -335,6 +330,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 

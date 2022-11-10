@@ -2,6 +2,9 @@
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
 vim.g.undotree_dir = "~/.cache/nvim/undodir"
+vim.g.snippet_dir = "~/.config/nvim/snippet/"
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
 
 -- jkhl 移动时光标周围保留8行
 vim.o.scrolloff = 8
