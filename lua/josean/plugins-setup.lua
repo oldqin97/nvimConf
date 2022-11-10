@@ -14,10 +14,10 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 -- when file is saved
 -- vim.cmd([[
 -- augroup packer_user_config
---autocmd!
---autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
---augroup end
---]])
+-- autocmd!
+-- autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+-- augroup end
+-- ]])
 --
 -- import packer safely
 local status, packer = pcall(require, "packer")
@@ -110,6 +110,12 @@ return packer.startup(function(use)
 
   --use("folke/tokyonight.nvim")
   use("projekt0n/github-nvim-theme")
+
+  -- markdown preview
+  use("davidgranstrom/nvim-markdown-preview")
+
+  -- picgo
+  use("askfiy/nvim-picgo")
 
   if packer_bootstrap then
     require("packer").sync()

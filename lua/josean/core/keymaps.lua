@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 
 ---------------------
--- General Keymaps
+-- General Keymapske
 ---------------------
 
 -- use jk to exit insert mode
@@ -56,6 +56,17 @@ keymap.set("n", "<A-q>", ":Bdelete!<CR>")
 keymap.set("n", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 keymap.set("v", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 keymap.set("i", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+
+-- 预览markdown
+keymap.set("n", "<C-A-p>", "<cmd>MarkdownPreview github<CR>")
+
+-- picgo
+keymap.set("n", "<leader>u", "<cmd>lua require'nvim-picgo'.upload_clipboard()<cr>")
+keymap.set("n", "<leader>e", "<cmd>lua require'nvim-picgo'.upload_imagefile()<cr>")
+
+-- comment
+keymap.set("n", "<A-/>", "gcc<Esc>")
+keymap.set("v", "<A-/>", "gcc<Esc>")
 
 ----------------------
 -- Plugin Keybinds
