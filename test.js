@@ -1,3 +1,1 @@
 [].map();
-
-const qwe = 'map';

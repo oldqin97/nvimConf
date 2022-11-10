@@ -55,6 +55,7 @@ return packer.startup(function(use)
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+  use("ahmedkhalf/project.nvim")
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
@@ -135,7 +136,7 @@ return packer.startup(function(use)
   use("ethanholz/nvim-lastplace")
 
   -- use 显示光标下相同词汇
-  -- use("RRethy/vim-illuminate")
+  use("RRethy/vim-illuminate")
 
   -- match tag
   use("leafOfTree/vim-matchtag")

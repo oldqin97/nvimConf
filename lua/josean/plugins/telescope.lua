@@ -10,6 +10,19 @@ if not actions_setup then
   return
 end
 
+local status, project = pcall(require, "project_nvim")
+if not status then
+  return
+end
+
+-- nvim-tree 支持
+vim.g.nvim_tree_respect_buf_cwd = 1
+
+project.setup({
+  detection_methods = { "pattern" },
+  patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", ".sln" },
+})
+
 -- configure telescope
 telescope.setup({
   -- configure custom mappings
@@ -25,3 +38,4 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("projects")
