@@ -37,6 +37,10 @@ cmp.setup({
       select = true,
       behavior = cmp.ConfirmBehavior.Replace,
     }),
+    ["<cr>"] = cmp.mapping.confirm({
+      select = true,
+      behavior = cmp.ConfirmBehavior.Replace,
+    }),
   }),
   -- sources for autocompletion
   sources = cmp.config.sources({

@@ -108,7 +108,8 @@ return packer.startup(function(use)
   -- 半透明
   use("xiyaowong/nvim-transparent")
 
-  use("folke/tokyonight.nvim")
+  --use("folke/tokyonight.nvim")
+  use("projekt0n/github-nvim-theme")
 
   if packer_bootstrap then
     require("packer").sync()
