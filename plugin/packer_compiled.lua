@@ -311,6 +311,11 @@ _G.packer_plugins = {
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
+  ["vim-doge"] = {
+    loaded = true,
+    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-doge",
+    url = "https://github.com/kkoomen/vim-doge"
+  },
   ["vim-illuminate"] = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-illuminate",

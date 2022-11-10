@@ -143,6 +143,12 @@ return packer.startup(function(use)
   -- indent-blankline
   use("lukas-reineke/indent-blankline.nvim")
 
+  -- jsdoc
+  use({
+    "kkoomen/vim-doge",
+    run = ":call doge#install()",
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end

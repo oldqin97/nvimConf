@@ -77,6 +77,8 @@ keymap("n", "qq", ":q<CR>", opt)
 -- 取消 s 默认功能
 keymap("n", "s", "", opt)
 
+keymap("n", "<A-d>", "<cmd>DogeGenerate<CR>", opt)
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
