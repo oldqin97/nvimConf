@@ -80,6 +80,11 @@ keymap("n", "s", "", opt)
 -- jsdoc
 keymap("n", "<A-d>", "<cmd>DogeGenerate<CR>", opt)
 
+keymap("n", "<leader>h", "<C-w>h", opt)
+keymap("n", "<leader>j", "<C-w>j", opt)
+keymap("n", "<leader>k", "<C-w>k", opt)
+keymap("n", "<leader>l", "<C-w>l", opt)
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
