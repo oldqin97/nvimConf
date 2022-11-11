@@ -13,11 +13,28 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 -- configure nvim-tree
 nvimtree.setup({
+  -- 完全禁止内置netrw
+  disable_netrw = true,
+
   -- change folder arrow icons
   renderer = {
     icons = {
       glyphs = {
+        git = {
+          unstaged = "",
+          staged = "",
+          unmerged = "",
+          renamed = "➜",
+          deleted = "",
+          untracked = "",
+          ignored = "◌",
+        },
         folder = {
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
           arrow_closed = "", -- arrow when folder is closed
           arrow_open = "", -- arrow when folder is open
         },
@@ -41,7 +58,32 @@ nvimtree.setup({
     enable = true,
     update_cwd = true,
   },
-  -- 	git = {
-  -- 		ignore = false,
-  -- 	},
+  git = {
+    enable = true,
+    timeout = 500,
+  },
+  --
+  -- project plugin 需要这样设置
+  filters = {
+    -- 隐藏 .文件
+    dotfiles = false,
+    -- 隐藏 node_modules 文件夹
+    -- custom = { "node_modules" },
+    custom = {},
+    exclude = { "node_modules", ".nuxt" },
+  },
+  view = {
+    -- 宽度
+    width = 30,
+    -- 也可以 'right'
+    side = "right",
+    -- 隐藏根目录
+    hide_root_folder = false,
+
+    -- 不显示行数
+    number = false,
+    relativenumber = false,
+    -- 显示图标
+    signcolumn = "yes",
+  },
 })
