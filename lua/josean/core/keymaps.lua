@@ -22,10 +22,10 @@ keymap("n", "<leader>nh", ":nohl<CR>", opt)
 keymap("n", "x", '"_x', opt)
 
 -- window management
-keymap("n", "<leader>sv", "<C-w>v", opt) -- split window vertically
-keymap("n", "<leader>sh", "<C-w>s", opt) -- split window horizontally
-keymap("n", "<leader>se", "<C-w>=", opt) -- make split windows equal width & height
-keymap("n", "<leader>sx", ":close<CR>", opt) -- close current split window
+-- keymap("n", "<leader>sv", "<C-w>v", opt) -- split window vertically
+-- keymap("n", "<leader>sh", "<C-w>s", opt) -- split window horizontally
+-- keymap("n", "<leader>se", "<C-w>=", opt) -- make split windows equal width & height
+-- keymap("n", "<leader>sx", ":close<CR>", opt) -- close current split window
 
 -- keymap("n", "<leader>to", ":tabnew<CR>",opt) -- open new tab
 -- keymap("n", "<leader>tx", ":tabclose<CR>",opt) -- close current tab
@@ -77,6 +77,7 @@ keymap("n", "qq", ":q<CR>", opt)
 -- 取消 s 默认功能
 keymap("n", "s", "", opt)
 
+-- jsdoc
 keymap("n", "<A-d>", "<cmd>DogeGenerate<CR>", opt)
 
 ----------------------

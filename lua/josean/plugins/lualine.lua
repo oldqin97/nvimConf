@@ -9,5 +9,27 @@ lualine.setup({
   options = {
     -- theme = "tokyonight",
     theme = "horizon",
+
+    -- 分割线
+    component_separators = {
+      left = "|",
+      right = "|",
+    },
+    section_separators = {
+      left = "",
+      right = "",
+    },
+    globalstatus = true,
+  },
+  extensions = { "nvim-tree" },
+  sections = {
+    lualine_c = {
+      "filename",
+    },
+    lualine_x = {
+      "filesize",
+      "encoding",
+      "filetype",
+    },
   },
 })
