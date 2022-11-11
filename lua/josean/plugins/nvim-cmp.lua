@@ -100,10 +100,10 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
     -- ["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
-    ["<C-p>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-n>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-    ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-d>"] = cmp.mapping.scroll_docs(4),
+    ["<C-q>"] = cmp.mapping.complete(), -- show completion suggestions
+    ["<A-e>"] = cmp.mapping.abort(), -- close completion window
     ["<tab>"] = cmp.mapping.confirm({
       select = true,
       behavior = cmp.ConfirmBehavior.Replace,

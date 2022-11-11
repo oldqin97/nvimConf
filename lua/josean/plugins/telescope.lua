@@ -29,9 +29,13 @@ telescope.setup({
   defaults = {
     mappings = {
       i = {
-        ["<C-p>"] = actions.move_selection_previous, -- move to prev result
-        ["<C-n>"] = actions.move_selection_next, -- move to next result
+        ["<Up>"] = actions.move_selection_previous, -- move to prev result
+        ["<Down>"] = actions.move_selection_next, -- move to next result
         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
+        ["<esc>"] = actions.close,
+        ["<A-c>"] = actions.close,
+        ["<C-u>"] = actions.preview_scrolling_up,
+        ["<C-d>"] = actions.preview_scrolling_down,
       },
     },
   },
