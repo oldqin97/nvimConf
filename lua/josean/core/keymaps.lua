@@ -116,6 +116,8 @@ keymap("n", "fs", "<cmd>HopChar2<cr>", opt)
 -- rest
 keymap("n", "<leader>1", "<Plug>RestNvim", opt)
 
+keymap("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
+
 ----------------------
 -- Plugin Keybinds
 ----------------------

@@ -70,7 +70,7 @@ null_ls.setup({
     -----------------------------------------------------
     -- Ruby
     -- gem install rubocop
-    formatting.rubocop,
+    -- formatting.rubocop,
     -----------------------------------------------------
     -- formatting.fixjson,
     -- Diagnostics  ---------------------

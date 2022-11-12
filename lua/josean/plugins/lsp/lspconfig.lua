@@ -27,7 +27,9 @@ local on_attach = function(client, bufnr)
 
   -- set keybinds
   keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
+
   keymap.set("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opts) -- show documentation for what is under cursor
+
   keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
   keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
   keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
@@ -110,6 +112,31 @@ lspconfig["grammarly"].setup({
 })
 
 lspconfig["marksman"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["rust_analyzer"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["pylsp"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["jsonls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["bashls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["dockerls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })

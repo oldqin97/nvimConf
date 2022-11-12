@@ -249,6 +249,11 @@ _G.packer_plugins = {
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/nvim-picgo",
     url = "https://github.com/askfiy/nvim-picgo"
   },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
+  },
   ["nvim-transparent"] = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/nvim-transparent",
@@ -326,11 +331,6 @@ _G.packer_plugins = {
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
-  ["vim-doge"] = {
-    loaded = true,
-    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-doge",
-    url = "https://github.com/kkoomen/vim-doge"
-  },
   ["vim-flog"] = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-flog",
@@ -350,11 +350,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-matchtag",
     url = "https://github.com/leafOfTree/vim-matchtag"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,

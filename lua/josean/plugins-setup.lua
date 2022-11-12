@@ -34,7 +34,9 @@ return packer.startup(function(use)
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
   -- essential plugins
-  use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
+  -- use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
+  use("kylechui/nvim-surround")
+
   use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
   -- commenting with gc
@@ -144,10 +146,10 @@ return packer.startup(function(use)
   use("lukas-reineke/indent-blankline.nvim")
 
   -- jsdoc
-  use({
-    "kkoomen/vim-doge",
-    run = ":call doge#install()",
-  })
+  -- use({
+  --   "kkoomen/vim-doge",
+  --   run = ":call doge#install()",
+  -- })
 
   -- gitgraph
   use("tpope/vim-fugitive")

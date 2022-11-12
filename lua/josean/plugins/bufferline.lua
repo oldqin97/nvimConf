@@ -1,11 +1,8 @@
 local status, bufferline = pcall(require, "bufferline")
 if not status then
-  vim.notify("没有找到 bufferline")
   return
 end
 -- bufferline 配置
--- https://github.com/akinsho/bufferline.nvim#configuration
-
 bufferline.setup({
   options = {
     -- 关闭 Tab 的命令，这里使用 moll/vim-bbye 的 :Bdelete 命令
@@ -21,6 +18,9 @@ bufferline.setup({
         text_align = "left",
       },
     },
+
+    numbers = "ordinal",
+    sort_by = "insert_after_current",
     diagnostics = "nvim_lsp",
     -- 可选，显示 LSP 报错图标
     ---@diagnostic disable-next-line: unused-local

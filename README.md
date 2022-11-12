@@ -7,3 +7,5 @@
 <i class="fa fa-qq fa-3x"></i>
 
 [![](https://img.shields.io/badge/baidu-qwe-%23fff)](https://www.baidu.com)
+
+this is a qwe

@@ -1,3 +1,7 @@
-for (let i = 0; i < 100; i++) {
-  console.log(i);
+let qqq = 'qwe';
+
+function test(q) {
+  return q;
 }
+
+test(qqq);
