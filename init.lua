@@ -26,4 +26,6 @@ require("josean.plugins.lastplaceConf")
 require("josean.plugins.undotreeConf")
 require("josean.plugins.illuminateConf")
 require("josean.plugins.indentConf")
-
+require("josean.plugins.confilictConf")
+require("josean.plugins.hopConf")
+require("josean.plugins.resetConf")

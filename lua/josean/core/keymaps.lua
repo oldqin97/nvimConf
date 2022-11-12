@@ -14,6 +14,7 @@ local keymap = vim.api.nvim_set_keymap
 
 -- use jk to exit insert mode
 keymap("i", "jj", "<ESC>", opt)
+keymap("n", "<ESC>", ":nohlsearch<CR>", opt)
 
 -- clear search highlights
 keymap("n", "<leader>nh", ":nohl<CR>", opt)
@@ -80,10 +81,40 @@ keymap("n", "s", "", opt)
 -- jsdoc
 keymap("n", "<A-d>", "<cmd>DogeGenerate<CR>", opt)
 
+-- 移动窗口
+
 keymap("n", "<leader>h", "<C-w>h", opt)
 keymap("n", "<leader>j", "<C-w>j", opt)
 keymap("n", "<leader>k", "<C-w>k", opt)
 keymap("n", "<leader>l", "<C-w>l", opt)
+
+keymap("n", "<leader>3", "<cmd>UndotreeToggle<CR>", opt)
+
+-- 左右比例
+keymap("n", "sh", ":vertical resize -10<CR>", opt)
+keymap("n", "sl", ":vertical resize +10<CR>", opt)
+-- 上下比例
+keymap("n", "sj", ":resize +10<CR>", opt)
+keymap("n", "sk", ":resize -10<CR>", opt)
+
+-- gitgraph
+keymap("n", "<leader>2", "<cmd>Flog<cr>", opt)
+
+-- 折叠
+keymap("n", "zz", ":foldclose<CR>", opt)
+keymap("n", "Z", ":foldopen<CR>", opt)
+
+-- git conflict
+keymap("n", "co", "<cmd>:ConflictMarkerOurselves<cr>", opt)
+keymap("n", "ct", "<cmd>:ConflictMarkerThemselves<cr>", opt)
+keymap("n", "cb", "<cmd>:ConflictMarkerBoth<cr>", opt)
+
+-- hop
+keymap("n", "fw", "<cmd>HopWord<cr>", opt)
+keymap("n", "fs", "<cmd>HopChar2<cr>", opt)
+
+-- rest
+keymap("n", "<leader>1", "<Plug>RestNvim", opt)
 
 ----------------------
 -- Plugin Keybinds

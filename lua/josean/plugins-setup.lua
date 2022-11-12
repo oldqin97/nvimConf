@@ -149,6 +149,19 @@ return packer.startup(function(use)
     run = ":call doge#install()",
   })
 
+  -- gitgraph
+  use("tpope/vim-fugitive")
+  use("rbong/vim-flog")
+
+  -- git configlict
+  use("rhysd/conflict-marker.vim")
+
+  -- hop
+  use("phaazon/hop.nvim")
+
+  -- reset
+  use("NTBBloodbath/rest.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end
