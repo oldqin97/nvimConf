@@ -164,6 +164,9 @@ return packer.startup(function(use)
   -- reset
   use("NTBBloodbath/rest.nvim")
 
+  -- JSON 增强
+  use("b0o/schemastore.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end

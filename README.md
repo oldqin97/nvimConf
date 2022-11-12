@@ -1,11 +1,16 @@
-<head> 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script> 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"></script> 
-</head> 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+### tmux 快捷键
 
-<i class="fa fa-qq fa-3x"></i>
+| 切换 panel | 切换 panel 大小 | 切换 window | 切换 session |
+| :--------: | :-------------: | :---------: | :----------: |
+|    C-j     |      C-x J      |    C-x H    |    C-x (     |
+|    C-k     |      C-x K      |    C-x L    |    C-x )     |
+|    C-h     |      C-x H      |             |              |
+|    C-l     |      C-x L      |             |              |
 
-[![](https://img.shields.io/badge/baidu-qwe-%23fff)](https://www.baidu.com)
+| 横向分割 panel | 纵向分割 panel |
+| :------------: | :------------: |
+|     C-x -      |     C-x =      |
 
-this is a qwe
+| 创建 window | 查看所有 | 查看所有 session | 修改 window 名 | 删除 panel | 放大 panel |
+| :---------: | :------: | :--------------: | :------------: | :--------: | :--------: |
+|    C-x c    |  C-x w   |      C-x s       |     C-x ,      |   C-x x    |   C-x z    |

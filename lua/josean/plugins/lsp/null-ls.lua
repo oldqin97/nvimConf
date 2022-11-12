@@ -75,9 +75,9 @@ null_ls.setup({
     -- formatting.fixjson,
     -- Diagnostics  ---------------------
 
-    -- diagnostics.eslint.with({
-    --   prefer_local = "node_modules/.bin",
-    -- }),
+    diagnostics.eslint.with({
+      prefer_local = "node_modules/.bin",
+    }),
 
     -- diagnostics.markdownlint,
     -- markdownlint-cli2

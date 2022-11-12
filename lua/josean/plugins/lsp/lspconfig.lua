@@ -127,6 +127,11 @@ lspconfig["pylsp"].setup({
 })
 
 lspconfig["jsonls"].setup({
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas(),
+    },
+  },
   capabilities = capabilities,
   on_attach = on_attach,
 })
@@ -137,6 +142,11 @@ lspconfig["bashls"].setup({
 })
 
 lspconfig["dockerls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["eslint"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
