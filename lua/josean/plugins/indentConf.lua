@@ -17,21 +17,21 @@ indent_blankline.setup({
   -- 用 treesitter 判断上下文
   show_current_context = true,
   show_current_context_start = true,
-  space_char_blankline = " ",
+  -- space_char_blankline = " ",
 
-  context_patterns = {
-    "class",
-    "function",
-    "method",
-    "element",
-    "^if",
-    "^while",
-    "^for",
-    "^object",
-    "^table",
-    "block",
-    "arguments",
-  },
+  -- context_patterns = {
+  --   "class",
+  --   "function",
+  --   "method",
+  --   "element",
+  --   "^if",
+  --   "^while",
+  --   "^for",
+  --   "^object",
+  --   "^table",
+  --   "block",
+  --   "arguments",
+  -- },
 
   -- echo &filetype
   filetype_exclude = {

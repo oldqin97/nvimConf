@@ -9,6 +9,7 @@ lualine.setup({
   options = {
     -- theme = "tokyonight",
     theme = "horizon",
+    -- theme = "everforest",
 
     -- 分割线
     component_separators = {

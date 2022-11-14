@@ -28,6 +28,11 @@ require("github-theme").setup({
   overrides = function(c)
     return {
       Comment = { fg = "#82e0aa" },
+      -- Function = {},
     }
   end,
 })
+
+-- vim.cmd("colorscheme onedark")
+
+--vim.cmd("colorscheme onedarker")

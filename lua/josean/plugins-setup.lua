@@ -12,12 +12,12 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
--- vim.cmd([[
--- augroup packer_user_config
--- autocmd!
--- autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
--- augroup end
--- ]])
+vim.cmd([[
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+augroup end
+]])
 --
 -- import packer safely
 local status, packer = pcall(require, "packer")
@@ -115,7 +115,6 @@ return packer.startup(function(use)
   --use("folke/tokyonight.nvim")
   use("projekt0n/github-nvim-theme")
 
-  -- markdown preview
   use("davidgranstrom/nvim-markdown-preview")
 
   -- picgo
@@ -146,10 +145,9 @@ return packer.startup(function(use)
   use("lukas-reineke/indent-blankline.nvim")
 
   -- jsdoc
-  -- use({
-  --   "kkoomen/vim-doge",
-  --   run = ":call doge#install()",
-  -- })
+  use({
+    "kkoomen/vim-doge",
+  })
 
   -- gitgraph
   use("tpope/vim-fugitive")
@@ -166,6 +164,8 @@ return packer.startup(function(use)
 
   -- JSON 增强
   use("b0o/schemastore.nvim")
+
+  use("mg979/vim-visual-multi")
 
   if packer_bootstrap then
     require("packer").sync()
