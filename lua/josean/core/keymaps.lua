@@ -118,6 +118,9 @@ keymap("n", "<leader>1", "<Plug>RestNvim", opt)
 
 keymap("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
 
+keymap("n", "<leader>mc", "<cmd>Telescope vim_bookmarks current_file<cr>", opt)
+keymap("n", "<leader>ma", "<cmd>Telescope vim_bookmarks all<cr>", opt)
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
@@ -127,7 +130,7 @@ keymap("n", "<A-w>", ":NvimTreeToggle<CR>", opt) -- toggle file explorer
 
 -- telescope
 keymap("n", "<A-p>", "<cmd>Telescope find_files<cr>", opt) -- find files within current working directory, respects .gitignore
-keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", opt) -- find string in current working directory as you type
+keymap("n", "<A-f>", "<cmd>Telescope live_grep<cr>", opt) -- find string in current working directory as you type
 
 -- keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>",opt) -- find string under cursor in current working directory
 -- keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>",opt) -- list open buffers in current neovim instance

@@ -1,3 +1,5 @@
-function test(x: number, y: number) {
+function ttt(x: number, y: number) {
   return x + y;
 }
+
+ttt(1, 2);
