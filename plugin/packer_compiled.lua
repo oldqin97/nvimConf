@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
     url = "https://github.com/Pocco81/auto-save.nvim"
   },
+  ["auto-session"] = {
+    loaded = true,
+    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/auto-session",
+    url = "https://github.com/rmagatti/auto-session"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/bufferline.nvim",

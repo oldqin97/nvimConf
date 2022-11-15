@@ -169,6 +169,8 @@ return packer.startup(function(use)
 
   use("mg979/vim-visual-multi")
 
+  use("rmagatti/auto-session")
+
   if packer_bootstrap then
     require("packer").sync()
   end
