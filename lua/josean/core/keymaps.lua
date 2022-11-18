@@ -50,16 +50,16 @@ keymap("n", "L", "$", opt)
 
 -- bufferline
 -- 左右Tab切换
-keymap("n", "<A-h>", ":BufferLineCyclePrev<CR>", opt)
-keymap("n", "<A-l>", ":BufferLineCycleNext<CR>", opt)
+keymap("n", "<A-9>", ":BufferLineCyclePrev<CR>", opt)
+keymap("n", "<A-0>", ":BufferLineCycleNext<CR>", opt)
 -- 关闭
 --"moll/vim-bbye"
 keymap("n", "<A-q>", ":Bdelete!<CR>", opt)
 
 -- 格式化
-keymap("n", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
-keymap("v", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
-keymap("i", "<A-s>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+keymap("n", "<A-s>", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opt)
+keymap("v", "<A-s>", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opt)
+keymap("i", "<A-s>", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opt)
 
 -- 预览markdown
 keymap("n", "<leader>p", "<cmd>MarkdownPreview github<CR>", opt)

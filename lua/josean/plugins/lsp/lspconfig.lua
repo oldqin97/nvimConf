@@ -20,8 +20,12 @@ local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
-  client.resolved_capabilities.document_formatting = false
-  client.resolved_capabilities.document_range_formatting = false
+  -- client.resolved_capabilities.document_formatting = false
+  -- client.resolved_capabilities.document_range_formatting = false
+
+  client.server_capabilities.document_formatting = false
+  client.server_capabilities.document_range_formatting = false
+
   -- keybind options
   local opts = { noremap = true, silent = true, buffer = bufnr }
 

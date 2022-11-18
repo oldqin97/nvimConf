@@ -13,11 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
+badd +62 lua/josean/core/keymaps.lua
+badd +15 ~/.config/nvim/lua/josean/core/options.lua
+badd +26 lua/josean/plugins/lsp/lspconfig.lua
 argglobal
 %argdel
+edit lua/josean/core/keymaps.lua
 argglobal
-enew
-file \[packer]
+balt lua/josean/plugins/lsp/lspconfig.lua
 setlocal fdm=expr
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}
@@ -25,7 +28,13 @@ setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
-setlocal nofen
+setlocal fen
+let s:l = 62 - ((15 * winheight(0) + 14) / 28)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 62
+normal! 061|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
