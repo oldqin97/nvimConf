@@ -115,7 +115,8 @@ return packer.startup(function(use)
   -- 半透明
   use("xiyaowong/nvim-transparent")
 
-  use("projekt0n/github-nvim-theme")
+  -- use("projekt0n/github-nvim-theme")
+  use("sainnhe/edge")
 
   use("davidgranstrom/nvim-markdown-preview")
 

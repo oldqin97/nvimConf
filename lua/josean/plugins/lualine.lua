@@ -7,9 +7,8 @@ end
 -- configure lualine with modified theme
 lualine.setup({
   options = {
-    -- theme = "tokyonight",
-    theme = "horizon",
-    -- theme = "everforest",
+    theme = "edge",
+    -- theme = "horizon",
 
     -- 分割线
     component_separators = {

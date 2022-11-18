@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  edge = {
+    loaded = true,
+    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/edge",
+    url = "https://github.com/sainnhe/edge"
+  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
@@ -158,11 +163,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
-  },
-  ["github-nvim-theme"] = {
-    loaded = true,
-    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
-    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
