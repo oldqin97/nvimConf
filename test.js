@@ -1,1 +1,3 @@
-
+[].map(item => {
+  return item;
+});

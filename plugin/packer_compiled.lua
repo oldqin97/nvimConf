@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
     url = "https://github.com/Pocco81/auto-save.nvim"
   },
-  ["auto-session"] = {
-    loaded = true,
-    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/auto-session",
-    url = "https://github.com/rmagatti/auto-session"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -330,6 +325,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/qin/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/Users/qin/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["typescript.nvim"] = {
     loaded = true,

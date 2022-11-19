@@ -57,9 +57,9 @@ keymap("n", "<A-0>", ":BufferLineCycleNext<CR>", opt)
 keymap("n", "<A-q>", ":Bdelete!<CR>", opt)
 
 -- 格式化
-keymap("n", "<A-s>", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opt)
-keymap("v", "<A-s>", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opt)
-keymap("i", "<A-s>", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opt)
+keymap("n", "<A-s>", "<cmd>lua vim.lsp.buf.format()<CR>", opt)
+keymap("v", "<A-s>", "<cmd>lua vim.lsp.buf.format()<CR>", opt)
+keymap("i", "<A-s>", "<cmd>lua vim.lsp.buf.format()<CR>", opt)
 
 -- 预览markdown
 keymap("n", "<leader>p", "<cmd>MarkdownPreview github<CR>", opt)
@@ -126,6 +126,7 @@ keymap("n", "<leader>ma", "<cmd>Telescope vim_bookmarks all<cr>", opt)
 ----------------------
 
 -- nvim-tree
+
 keymap("n", "<A-w>", ":NvimTreeToggle<CR>", opt) -- toggle file explorer
 
 -- telescope
@@ -144,3 +145,10 @@ keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", opt) -- list current 
 
 -- restart lsp server (not on youtube nvim video)
 -- keymap("n", "<leader>rs", ":LspRestart<CR>",opt) -- mapping to restart lsp if necessary
+
+local pluginKeys = {}
+pluginKeys.mapToggleTerm = function(toggleterm)
+  vim.keymap.set({ "n" }, "<leader>tg", toggleterm.toggleG)
+end
+
+return pluginKeys

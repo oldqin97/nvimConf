@@ -170,7 +170,9 @@ return packer.startup(function(use)
 
   use("mg979/vim-visual-multi")
 
-  use("rmagatti/auto-session")
+  -- use("rmagatti/auto-session")
+
+  use("akinsho/toggleterm.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

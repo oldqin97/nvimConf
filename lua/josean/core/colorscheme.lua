@@ -41,7 +41,6 @@
 -- vim.g.tokyonight_style = "storm" -- day / night
 
 -- 半透明
-vim.g.edge_transparent_background = 2
 
 local colorscheme = "edge"
 
@@ -49,3 +48,5 @@ local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
   return
 end
+
+vim.g.edge_transparent_background = 2
